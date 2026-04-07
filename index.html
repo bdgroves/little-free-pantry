@@ -502,7 +502,7 @@
 
     <div class="cta-row">
       <a href="https://lakewoodrotary.com/little-free-pantry-initiative/" class="btn btn-gold">Donate Online</a>
-      <a href="mailto:zawilski@comcast.net" class="btn btn-outline">Contact: Bob Zawilski</a>
+      <a href="/cdn-cgi/l/email-protection#91ebf0e6f8fde2faf8d1f2fefcf2f0e2e5bffff4e5" class="btn btn-outline">Contact: Bob Zawilski</a>
     </div>
     <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--text-light);">
       Lakewood Rotary meets Fridays at Tacoma Country &amp; Golf Club<br>
@@ -514,11 +514,11 @@
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <p>Little Free Pantry Initiative &nbsp;&middot;&nbsp; <a href="https://lakewoodrotary.com">Rotary Club of Lakewood</a> &nbsp;&middot;&nbsp; District 5020</p>
-  <p style="margin-top:0.5rem;">Map by Brooks Groves &nbsp;&middot;&nbsp; <a href="mailto:info@lakewoodrotary.com">info@lakewoodrotary.com</a></p>
+  <p style="margin-top:0.5rem;">Map by Brooks Groves &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#3e575058517e525f555b4951515a4c514a5f4c47105d5153"><span class="__cf_email__" data-cfemail="234a4d454c634f424846544c4c47514c5742515a0d404c4e">[email&#160;protected]</span></a></p>
 </footer>
 
 <!-- ═══ LEAFLET MAP ═══ -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 // ── Map init ──
 const map = L.map('map', { zoomControl: false }).setView([47.155, -122.555], 12);
@@ -588,36 +588,25 @@ function dropoffPopup(d) {
 
 // ── Data: 7 pantry locations ──
 const pantries = [
-  { id: 1, lat: 47.1605, lng: -122.5545, addr: '8601 104th St SW, Lakewood, WA' },
-  { id: 2, lat: 47.1310, lng: -122.5780, addr: '14511 W Thorne Ln SW, Tillicum, WA' },
-  { id: 3, lat: 47.1410, lng: -122.5570, addr: '8903 Newgrove Ave SW, Lakewood, WA' },
-  { id: 4, lat: 47.1325, lng: -122.5680, addr: '14916 Washington Ave SW, Tillicum, WA' },
-  { id: 5, lat: 47.1465, lng: -122.5165, addr: '12601 Addison St SW, Lakewood, WA' },
-  { id: 6, lat: 47.1700, lng: -122.5920, addr: '2301 Worthington St, Steilacoom, WA' },
-  { id: 7, lat: 47.1700, lng: -122.5250, addr: '8956 Gravelly Lake Dr SW, Lakewood, WA' }
+  { id: 1, lat: 47.163941, lng: -122.551354, addr: '8601 104th St SW, Lakewood, WA' },
+  { id: 2, lat: 47.125848, lng: -122.556551, addr: '14511 W Thorne Ln SW, Lakewood, WA' },
+  { id: 3, lat: 47.144301, lng: -122.555860, addr: '8903 Newgrove Ave SW, Lakewood, WA' },
+  { id: 4, lat: 47.123821, lng: -122.554252, addr: '14916 Washington Ave SW, Lakewood, WA' },
+  { id: 5, lat: 47.142792, lng: -122.501063, addr: '12601 Addison St SW, Lakewood, WA' },
+  { id: 6, lat: 47.170481, lng: -122.592294, addr: '2301 Worthington St, Steilacoom, WA' },
+  { id: 7, lat: 47.174754, lng: -122.514600, addr: '8956 Gravelly Lake Dr SW, Lakewood, WA' }
 ];
 
 const dropoffs = [
-  { name: 'The Y',                       lat: 47.1580, lng: -122.5330, addr: '9715 Lakewood Dr SW, Lakewood, WA 98499' },
-  { name: 'Crunch Fitness',              lat: 47.1680, lng: -122.5260, addr: '6111 Lakewood Towne Center Blvd SW, Lakewood, WA 98499' },
-  { name: 'Little Church on the Prairie', lat: 47.1560, lng: -122.5440, addr: '6310 Motor Ave SW, Lakewood, WA 98499' },
-  { name: 'Christ Lutheran Church',       lat: 47.1540, lng: -122.5600, addr: '8211 112th St SW, Lakewood, WA 98498' },
-  { name: 'Lakeview Power Offices',       lat: 47.1600, lng: -122.5190, addr: '11509 Bridgeport Way SW, Lakewood, WA 98499' }
+  { name: 'The Y',                       lat: 47.168899, lng: -122.505220, addr: '9715 Lakewood Dr SW, Lakewood, WA 98499' },
+  { name: 'Crunch Fitness',              lat: 47.165459, lng: -122.519296, addr: '6111 Lakewood Towne Center Blvd SW, Lakewood, WA 98499' },
+  { name: 'Little Church on the Prairie', lat: 47.169722, lng: -122.522778, addr: '6310 Motor Ave SW, Lakewood, WA 98499' },
+  { name: 'Christ Lutheran Church',       lat: 47.156294, lng: -122.546600, addr: '8211 112th St SW, Lakewood, WA 98498' },
+  { name: 'Lakeview Power Offices',       lat: 47.152873, lng: -122.503665, addr: '11509 Bridgeport Way SW, Lakewood, WA 98499' }
 ];
 
 // ── Place markers ──
 const all = [];
 pantries.forEach(p => {
   all.push(L.marker([p.lat, p.lng], { icon: pantryIcon() }).addTo(map)
-    .bindPopup(pantryPopup(p), { maxWidth: 300, closeButton: true }));
-});
-dropoffs.forEach(d => {
-  all.push(L.marker([d.lat, d.lng], { icon: dropoffIcon() }).addTo(map)
-    .bindPopup(dropoffPopup(d), { maxWidth: 300, closeButton: true }));
-});
-
-// Fit bounds
-if (all.length) map.fitBounds(L.featureGroup(all).getBounds().pad(0.12));
-</script>
-</body>
-</html>
+    .bindPopup(pantryPopup(p), { maxWidth: 300, closeButton: true })
