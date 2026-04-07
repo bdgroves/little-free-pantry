@@ -565,7 +565,7 @@ function pantryPopup(p) {
   const note = p.note ? `<div class="popup-note">${p.note}</div>` : '';
   return `<div class="popup-header pantry">${gearSvg} LITTLE FREE PANTRY</div>
     <div class="popup-body">
-      <div class="popup-name">Pantry #${p.id}</div>
+      <div class="popup-name">${p.name}</div>
       <div class="popup-addr">${p.addr}</div>
       ${note}
       <div class="popup-cta">
@@ -588,13 +588,13 @@ function dropoffPopup(d) {
 
 // ── Data: 7 pantry locations ──
 const pantries = [
-  { id: 1, lat: 47.163941, lng: -122.551354, addr: '8601 104th St SW, Lakewood, WA' },
-  { id: 2, lat: 47.125848, lng: -122.556551, addr: '14511 W Thorne Ln SW, Lakewood, WA' },
-  { id: 3, lat: 47.144301, lng: -122.555860, addr: '8903 Newgrove Ave SW, Lakewood, WA' },
-  { id: 4, lat: 47.123821, lng: -122.554252, addr: '14916 Washington Ave SW, Lakewood, WA' },
-  { id: 5, lat: 47.142792, lng: -122.501063, addr: '12601 Addison St SW, Lakewood, WA' },
-  { id: 6, lat: 47.170481, lng: -122.592294, addr: '2301 Worthington St, Steilacoom, WA' },
-  { id: 7, lat: 47.174754, lng: -122.514600, addr: '8956 Gravelly Lake Dr SW, Lakewood, WA' }
+  { id: 1, lat: 47.164124, lng: -122.551355, name: 'Lakewood Presbyterian Church', addr: '8601 104th St SW, Lakewood, WA' },
+  { id: 2, lat: 47.125996, lng: -122.556594, name: 'Kings Chapel Tillicum', addr: '14511 W Thorne Ln SW, Tillicum, WA' },
+  { id: 3, lat: 47.144428, lng: -122.555898, name: '8903 Newgrove Ave SW', addr: '8903 Newgrove Ave SW, Lakewood, WA' },
+  { id: 4, lat: 47.123921, lng: -122.554310, name: 'Tillicum Community Center', addr: '14916 Washington Ave SW, Tillicum, WA' },
+  { id: 5, lat: 47.143468, lng: -122.501038, name: 'Springbrook Park', addr: '12601 Addison St SW, Lakewood, WA' },
+  { id: 6, lat: 47.170679, lng: -122.592245, name: 'Steilacoom Community Center', addr: '2301 Worthington St, Steilacoom, WA' },
+  { id: 7, lat: 47.174790, lng: -122.514611, name: 'Living Access Support Alliance', addr: '8956 Gravelly Lake Dr SW, Lakewood, WA' }
 ];
 
 const dropoffs = [

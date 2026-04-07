@@ -6,7 +6,7 @@ Interactive map and project page for the [Lakewood Rotary](https://lakewoodrotar
 
 ## About
 
-During the 2020 pandemic, Lakewood Rotary launched the Little Free Pantry project to provide 24/7 barrier-free access to food and hygiene items across Lakewood, Tillicum, and Steilacoom, WA. Currently 7 pantries across Lakewood, Tillicum, and Steilacoom, supported by 5 community drop-off sites.
+During the 2020 pandemic, Lakewood Rotary launched the Little Free Pantry project to provide 24/7 barrier-free access to food and hygiene items across Lakewood, Tillicum, and Steilacoom, WA. Currently 7 pantries across Lakewood, Tillicum, and Steilacoom, WA, supported by 5 community drop-off sites.
 
 ## Features
 
