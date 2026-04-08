@@ -521,13 +521,13 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 // ── Map init ──
-const map = L.map('map', { zoomControl: false }).setView([47.155, -122.555], 12);
-L.control.zoom({ position: 'topright' }).addTo(map);
+const lfpMap = L.map('map', { zoomControl: false }).setView([47.155, -122.555], 12);
+L.control.zoom({ position: 'topright' }).addTo(lfpMap);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
   maxZoom: 18
-}).addTo(map);
+}).addTo(lfpMap);
 
 // ── Rotary branding control ──
 const RotaryCtrl = L.Control.extend({
@@ -538,7 +538,7 @@ const RotaryCtrl = L.Control.extend({
     return d;
   }
 });
-new RotaryCtrl().addTo(map);
+new RotaryCtrl().addTo(lfpMap);
 
 // ── Marker factories ──
 function pantryIcon() {
@@ -608,5 +608,16 @@ const dropoffs = [
 // ── Place markers ──
 const all = [];
 pantries.forEach(p => {
-  all.push(L.marker([p.lat, p.lng], { icon: pantryIcon() }).addTo(map)
-    .bindPopup(pantryPopup(p), { maxWidth: 300, closeButton: true })
+  all.push(L.marker([p.lat, p.lng], { icon: pantryIcon() }).addTo(lfpMap)
+    .bindPopup(pantryPopup(p), { maxWidth: 300, closeButton: true }));
+});
+dropoffs.forEach(d => {
+  all.push(L.marker([d.lat, d.lng], { icon: dropoffIcon() }).addTo(lfpMap)
+    .bindPopup(dropoffPopup(d), { maxWidth: 300, closeButton: true }));
+});
+
+// Fit bounds
+if (all.length) lfpMap.fitBounds(L.featureGroup(all).getBounds().pad(0.12));
+</script>
+</body>
+</html>
