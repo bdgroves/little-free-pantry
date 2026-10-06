@@ -21,7 +21,7 @@ During the 2020 pandemic, Lakewood Rotary launched the Little Free Pantry projec
 
 Plain HTML/CSS/JS. No frameworks, no build step.
 
-- [Leaflet](https://leafletjs.com/) with CARTO Voyager tiles
+- [Leaflet](https://leafletjs.com/) with keyless Esri basemaps (streets, satellite, light gray)
 - Google Fonts (Playfair Display, Source Sans 3)
 - GitHub Pages hosting
 
@@ -52,4 +52,4 @@ Original PDF map and interactive Leaflet map by Brooks Groves.
 
 ## License
 
-Content © Rotary Club of Lakewood. Map data © OpenStreetMap contributors, CARTO.
+Content © Rotary Club of Lakewood. Map tiles © Esri; map data © OpenStreetMap contributors and Esri partners.

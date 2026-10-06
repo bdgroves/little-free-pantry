@@ -524,10 +524,22 @@
 const lfpMap = L.map('map', { zoomControl: false }).setView([47.155, -122.555], 12);
 L.control.zoom({ position: 'topright' }).addTo(lfpMap);
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  maxZoom: 18
-}).addTo(lfpMap);
+// ── Basemaps: Esri's public tile services, no API key needed ──
+const esri = (svc, opts = {}) => L.tileLayer(
+  `https://server.arcgisonline.com/ArcGIS/rest/services/${svc}/MapServer/tile/{z}/{y}/{x}`,
+  { maxZoom: 19, attribution: 'Tiles &copy; Esri', ...opts });
+const streets = esri('World_Street_Map', { attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors' });
+const satellite = L.layerGroup([
+  esri('World_Imagery', { attribution: 'Tiles &copy; Esri &mdash; Esri, Maxar, Earthstar Geographics, USDA, USGS' }),
+  esri('Reference/World_Transportation', { attribution: '' }),
+  esri('Reference/World_Boundaries_and_Places', { attribution: '' })
+]);
+const light = L.layerGroup([
+  esri('Canvas/World_Light_Gray_Base', { maxNativeZoom: 16, attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors' }),
+  esri('Canvas/World_Light_Gray_Reference', { maxNativeZoom: 16, attribution: '' })
+]);
+streets.addTo(lfpMap);
+L.control.layers({ 'Streets': streets, 'Satellite': satellite, 'Light': light }, null, { position: 'topright' }).addTo(lfpMap);
 
 // ── Rotary branding control ──
 const RotaryCtrl = L.Control.extend({
